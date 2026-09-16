@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:,">
     <title>Drum Kit</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="keys">
+    <div class="page">
+      <h1></h1>
+      <div class="keys">
       <div data-key="65" class="key">
         <kbd>A</kbd>
         <span class="sound">clap</span>
@@ -44,6 +47,7 @@
         <kbd>L</kbd>
         <span class="sound">tink</span>
       </div>
+    </div>
     </div>
 
     <audio data-key="65" src="audios/sounds_clap.wav"></audio>
