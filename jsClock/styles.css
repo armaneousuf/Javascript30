@@ -24,8 +24,9 @@ body {
 }
 
 .hand {
-  background-color: #000;
+  background-color: #160e0e;
   width: 4px;
+  border-radius: 10px;
   position: absolute;
   bottom: 50%;
   left: 50%;
@@ -43,5 +44,5 @@ body {
 
 .second-hand {
   height: 95px;
-  background-color: red;
+  background-color: hsl(0, 76%, 47%);
 }
