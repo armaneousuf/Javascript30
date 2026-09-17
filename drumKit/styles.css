@@ -17,34 +17,43 @@ body {
   min-height: 100dvh;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 }
 
 .keys {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 1rem; 
+  max-width: 1200px;
+  width: 100%;
 }
 
 .key {
   border-radius: 5px;
   border: 2px solid #fff;
-  padding: 5px;
+  padding: 10px 5px;
   transition: all 0.7s ease;
-  width: 7rem;
+  width: 6.5rem;
+  max-width: 100%;
   text-align: center;
   cursor: pointer;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
 }
 
 .sound {
-  font-size: 20px;
+  font-size: 0.9rem; 
   color: #ffc600;
   text-transform: uppercase;
 }
 
 kbd {
   display: block;
-  font-size: 20px;
+  font-size: 1.5rem;
   text-align: center;
   color: #fff;
+  font-weight: bold;
 }
 
 .playing {
@@ -55,5 +64,29 @@ kbd {
 
 h1 {
   text-align: center;
-  color: #d5e0dc;
+  color: #fff;
+  background-color: #10705e;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 2rem;
+  font-size: clamp(1.2rem, 4vw, 2rem); 
+}
+
+@media (max-width: 480px) {
+  .keys {
+    gap: 0.5rem;
+  }
+  
+  .key {
+    width: 4.5rem;
+    padding: 8px 4px;
+  }
+
+  kbd {
+    font-size: 1.2rem;
+  }
+
+  .sound {
+    font-size: 0.75rem;
+  }
 }
