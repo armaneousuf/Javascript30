@@ -1,6 +1,6 @@
 const inputs = document.querySelectorAll('.container input');
 
-console.log(inputs);
+// console.log(inputs);
 
 function updateChanges(){
     console.log(this);
