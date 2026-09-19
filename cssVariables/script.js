@@ -6,7 +6,8 @@ function updateChanges(){
     console.log(this);
     console.log(this.value);
     console.log(this.id);
-    const suffix = this.dataset.sizing || '';
+    // const suffix = this.dataset.sizing || '';
+    const suffix = this.dataset.sizing ? this.dataset.sizing : '';
     document.documentElement.style.setProperty(`--${this.id}`, this.value + suffix);
 }
 
