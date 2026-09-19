@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ :root {
+  --spacing: 2rem;
+  --blur: 10px;
+  --color: #ffc600;
+ }
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+
+  & span {
+    color: var(--color);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.container label {
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+img {
+  height: 350px;
+  margin: 30px auto;
+  display: block;
+  filter: blur(var(--blur));
+  padding: var(--spacing);
+  background-color: var(--color);
+}
