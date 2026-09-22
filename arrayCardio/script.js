@@ -140,5 +140,5 @@ const transportation = data.reduce((obj, item) => {
   }
   obj[item]++;
   return obj;
-}, {});
+}, []);
 console.log(transportation);
