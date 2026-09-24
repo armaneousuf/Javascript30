@@ -9,9 +9,12 @@ fetch(endpoint)
   .then((data) => cities.push(...data));
 
 function findMatches(wordToMatch, cities) {
+  const word = wordToMatch.toLowerCase();
   return cities.filter((place) => {
-    const regex = new RegExp(wordToMatch, "gi");
-    return place.city.match(regex) || place.state.match(regex);
+    return (
+      place.city.toLowerCase().includes(word) ||
+      place.state.toLowerCase().includes(word)
+    );
   });
 }
 
@@ -24,10 +27,7 @@ function displayMatches() {
   const html = matchedArr
     .map((place) => {
       const regex = new RegExp(this.value, "gi");
-      const cityName = place.city.replace(
-        regex,
-        `<span class="hl">$&</span>`,
-      );
+      const cityName = place.city.replace(regex, `<span class="hl">$&</span>`);
       const stateName = place.state.replace(
         regex,
         `<span class="hl">$&</span>`,
