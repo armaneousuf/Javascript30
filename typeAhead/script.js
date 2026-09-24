@@ -9,13 +9,10 @@ fetch(endpoint)
   .then((data) => cities.push(...data));
 
 function findMatches(wordToMatch, cities) {
-  const word = wordToMatch.toLowerCase();
-  return cities.filter((place) => {
-    return (
-      place.city.toLowerCase().includes(word) ||
-      place.state.toLowerCase().includes(word)
-    );
-  });
+  return cities.filter(place => {
+    const regex = new RegExp(wordToMatch, 'gi');
+    return place.city.match(regex) || place.state.match(regex)
+  })
 }
 
 function numberWithCommans(number) {
