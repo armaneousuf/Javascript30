@@ -15,9 +15,31 @@ function findMatches(wordToMatch, cities) {
   });
 }
 
-function displayMatches() {
-  
+function numberWithCommans(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', displayMatches)
+function displayMatches() {
+  const matchedArr = findMatches(this.value, cities);
+  const html = matchedArr
+    .map((place) => {
+      const regex = new RegExp(this.value, "gi");
+      const cityName = place.city.replace(
+        regex,
+        `<span class="hl">${this.value}</span>`,
+      );
+      const stateName = place.city.replace(
+        regex,
+        `<span class="hl">${this.value}</span>`,
+      );
+      return `<li>
+    <span class="name">${cityName}, ${stateName}</span>
+    <span class="population">${numberWithCommans(place.population)}</span>
+    </li>`;
+    })
+    .join("");
+  suggestions.innerHTML = html;
+}
+
+searchInput.addEventListener("change", displayMatches);
+searchInput.addEventListener("keyup", displayMatches);
