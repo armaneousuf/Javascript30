@@ -20,11 +20,15 @@ const isAdult = people.some((person) => {
 // console.log(isAdult);
 
 const isEveryoneAdult = people.every((person) => {
-    const currentYear = new Date().getFullYear();
-    return currentYear - person.year >= 19;
-})
-console.log(isEveryoneAdult)
+  const currentYear = new Date().getFullYear();
+  return currentYear - person.year >= 19;
+});
+console.log(isEveryoneAdult);
 
-// const isOlder = people.some((isOlder) => {
-//     return isOlder.year > 1950});
-// console.log(isOlder)
+const comment = comments.find((comment) => comment.id === 823423);
+console.log(comment); // with implicit return
+
+const index = comments.findIndex((comment) => comment.id === 823423);
+comments.splice(index, 1);
+console.log(index);
+console.table(comments);
