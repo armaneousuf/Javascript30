@@ -5,14 +5,14 @@ console.log(canvas, ctx);
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-ctx.strokeStyle = "#BADA55";
+ctx.strokeStyle = "#be1a1a";
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
+ctx.lineWidth = 5;
 
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
-ctx.lineWidth = 5;
 
 function draw(e) {
     if (!isDrawing) return;
