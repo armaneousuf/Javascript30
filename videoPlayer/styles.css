@@ -10,9 +10,8 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  background: #41da7c;
+  background: #1c1c1c;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1f5239 0%,#db3ae4 48%,#7e4ae8 100%);
   background-size: cover;
   align-items: center;
   justify-content: center;
@@ -55,7 +54,7 @@ body {
 }
 
 .player__button:focus {
-  border-color: #ffc600;
+  border-color: #2ec73b;
 }
 
 .player__slider {
@@ -93,15 +92,15 @@ body {
   flex-basis: 100%;
   height: 5px;
   transition: height 0.3s;
-  background: rgba(0,0,0,0.5);
+  background: #faf8f880;
   cursor: ew-resize;
 }
 
 .progress__filled {
-  width: 50%;
-  background: #ffc600;
+  width: 0%;
+  background: #5cd364;
   flex: 0;
-  flex-basis: 50%;
+  flex-basis: 0%;
 }
 
 /* unholy css to style input type="range" */
@@ -123,7 +122,7 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
-  background: rgba(255,255,255,0.8);
+  background: #faf8f880;
   border-radius: 1.3px;
   border: 0.2px solid rgba(1, 1, 1, 0);
 }
@@ -132,7 +131,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50px;
-  background: #ffc600;
+  background: #46c657;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -3.5px;

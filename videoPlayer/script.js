@@ -40,6 +40,7 @@ function handleProgress() {
   progressBar.style.flexBasis = `${percent}%`;
 }
 
+let mousedown = false;
 function scrub(e) {
   const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
   video.currentTime = scrubTime;
@@ -47,7 +48,7 @@ function scrub(e) {
 
 function fullscreen() {
   if(!document.fullscreenElement) {
-    video.requestFullscreen()
+    player.requestFullscreen()
     .catch(err => console.log(`The error is: ${err}`))
   } else {
     document.exitFullscreen()
@@ -68,4 +69,7 @@ ranges.forEach((range) => {
   range.addEventListener("input", handleRangeUpdate);
 });
 progress.addEventListener('click', scrub);
+progress.addEventListener("mousedown", () => mousedown = true);
+progress.addEventListener("mouseup", () => mousedown = false);
+progress.addEventListener("mousemove", (e) => mousedown && scrub(e));
 fullscreenBtn.addEventListener('click', fullscreen);
