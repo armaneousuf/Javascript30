@@ -10,7 +10,7 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.classList.remove("active");
     }
   });
-}, {threshold: 0.1});
+}, {threshold: 0.1, rootMargin: "0px 0px -10% 0px"});
 
 sliderImages.forEach((img) => {
   observer.observe(img);
